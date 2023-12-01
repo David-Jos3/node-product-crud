@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const fs = require('fs')
+const port = 8080;
 
 
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('<h1>Pagina Home</h1>')
@@ -10,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/data', (req, res) => {
+app.get('/products', (req, res) => {
   fs.readFile('db.json', 'utf-8', (err, data) => {
     if (err) {
       console.error(err)
@@ -20,10 +23,31 @@ app.get('/data', (req, res) => {
     const jsonData = JSON.parse(data);
     res.json(jsonData)
   })
-
 })
 
-const PORT = 8080;
-app.listen(PORT, () => {
-  console.log(`Server running on port  ${PORT}`)
+
+app.post('/products', (req, res) => {
+  fs.readFile('db.json', 'utf-8', (err, data) => {
+    if (err) {
+      console.error(err)
+      res.status(500).send('Erro ao Processar a solicitação')
+    }
+    const jsonData = JSON.parse(data)
+    const newData = req.body
+
+    jsonData.products.push(newData)
+
+    fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+      res.json(newData);
+    });
+  });
+});
+
+
+app.listen(port, () => {
+  console.log(`Server running on port  ${port}`)
 })
