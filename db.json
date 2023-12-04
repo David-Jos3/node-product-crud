@@ -1,1 +1,132 @@
-{"products":[{"id":1,"name":"Smartphone Avançado","description":"Um smartphone de última geração com recursos avançados.","price":799.99,"category":"Eletrônicos","stock":50},{"id":2,"name":"Tênis de Corrida Profissional","description":"Tênis projetado para atletas profissionais, proporcionando conforto e desempenho.","price":129.99,"category":"Esportes","stock":30},{"id":3,"name":"Fones de Ouvido sem Fio","description":"Fones de ouvido de alta qualidade, sem fio, com cancelamento de ruído.","price":149.99,"category":"Eletrônicos","stock":40},{"id":4,"name":"Camiseta Premium","description":"Camiseta feita com algodão premium para máximo conforto.","price":34.99,"category":"Roupas","stock":60},{"id":5,"name":"Mochila de Viagem Durável","description":"Mochila resistente e espaçosa, ideal para viagens.","price":79.99,"category":"Acessórios","stock":25},{"id":6,"name":"Câmera DSLR Profissional","description":"Câmera digital de alta resolução para fotógrafos profissionais.","price":1299.99,"category":"Eletrônicos","stock":15},{"id":7,"name":"Relógio Inteligente","description":"Relógio com monitor de saúde, notificações e resistência à água.","price":89.99,"category":"Acessórios","stock":35},{"id":8,"name":"Livro Best-Seller","description":"Último lançamento do autor renomado, uma história envolvente.","price":24.99,"category":"Livros","stock":20},{"id":9,"name":"Caixa de Ferramentas Profissional","description":"Conjunto completo de ferramentas de alta qualidade em uma caixa resistente.","price":149.99,"category":"Ferramentas","stock":10},{"id":10,"name":"Óculos de Sol Estilosos","description":"Óculos de sol da última moda, proteção UV e design elegante.","price":59.99,"category":"Acessórios","stock":30},{"id":11,"nome":"Sistema de Segurança Residencial Inteligente","descricao":"Sistema de segurança avançado com recursos inteligentes para proteção residencial.","preco":299.99,"categoria":"Casa e Segurança","estoque":20},{"id":12,"nome":"Conjunto de Panelas Gourmet","descricao":"Conjunto de utensílios de cozinha de alta qualidade projetado para chefs gourmet, com materiais duráveis.","preco":199.99,"categoria":"Cozinha e Jantar","estoque":25},{"id":13,"nome":"Mouse de Jogo Sem Fio","descricao":"Mouse de jogo de precisão com botões personalizáveis e conectividade sem fio.","preco":79.99,"categoria":"Acessórios para Jogos","estoque":15},{"id":14,"nome":"Pulseira Rastreadora de Fitness","descricao":"Pulseira de fitness elegante com monitoramento de frequência cardíaca e recursos de rastreamento de atividades.","preco":49.99,"categoria":"Saúde e Fitness","estoque":50},{"id":15,"nome":"Carregador Solar Portátil","descricao":"Carregador solar compacto para energia em movimento, adequado para carregar dispositivos ao ar livre.","preco":38.99,"categoria":"Eletrônicos","estoque":35},{"id":29,"nome":"Câmera de Ação Ultra HD","descricao":"Câmera compacta de alta definição para capturar momentos emocionantes durante atividades ao ar livre. Resistente à água e fácil de transportar.","preco":150.99,"categoria":"Eletrônicos","estoque":30}]}
+{
+  "products":[
+     {
+        "id":1,
+        "name":"Advanced Smartphone",
+        "description":"A state-of-the-art smartphone with advanced features.",
+        "price":799.99,
+        "category":"Electronics",
+        "stock":50
+     },
+     {
+        "id":2,
+        "name":"Professional Running Shoes",
+        "description":"Shoes designed for professional athletes, providing comfort and performance.",
+        "price":129.99,
+        "category":"Sports",
+        "stock":30
+     },
+     {
+        "id":3,
+        "name":"Wireless Earphones",
+        "description":"High-quality wireless earphones with noise cancellation.",
+        "price":149.99,
+        "category":"Electronics",
+        "stock":40
+     },
+     {
+        "id":4,
+        "name":"Premium T-Shirt",
+        "description":"T-shirt made with premium cotton for maximum comfort.",
+        "price":34.99,
+        "category":"Clothing",
+        "stock":60
+     },
+     {
+        "id":5,
+        "name":"Durable Travel Backpack",
+        "description":"Resilient and spacious backpack, ideal for travel.",
+        "price":79.99,
+        "category":"Accessories",
+        "stock":25
+     },
+     {
+        "id":6,
+        "name":"Professional DSLR Camera",
+        "description":"High-resolution digital camera for professional photographers.",
+        "price":1299.99,
+        "category":"Electronics",
+        "stock":15
+     },
+     {
+        "id":7,
+        "name":"Smartwatch",
+        "description":"Watch with health monitor, notifications, and water resistance.",
+        "price":89.99,
+        "category":"Accessories",
+        "stock":35
+     },
+     {
+        "id":8,
+        "name":"Best-Selling Book",
+        "description":"Latest release from the renowned author, a captivating story.",
+        "price":24.99,
+        "category":"Books",
+        "stock":20
+     },
+     {
+        "id":9,
+        "name":"Professional Toolbox",
+        "description":"Complete set of high-quality tools in a sturdy box.",
+        "price":149.99,
+        "category":"Tools",
+        "stock":10
+     },
+     {
+        "id":10,
+        "name":"Stylish Sunglasses",
+        "description":"Fashionable sunglasses with UV protection and elegant design.",
+        "price":59.99,
+        "category":"Accessories",
+        "stock":30
+     },
+     {
+        "id":11,
+        "name":"Smart Home Security System",
+        "description":"Advanced security system with intelligent features for home protection.",
+        "price":299.99,
+        "category":"Home and Security",
+        "stock":20
+     },
+     {
+        "id":12,
+        "name":"Gourmet Cookware Set",
+        "description":"High-quality kitchen utensil set designed for gourmet chefs, with durable materials.",
+        "price":199.99,
+        "category":"Kitchen and Dining",
+        "stock":25
+     },
+     {
+        "id":13,
+        "name":"Wireless Gaming Mouse",
+        "description":"Precision gaming mouse with customizable buttons and wireless connectivity.",
+        "price":79.99,
+        "category":"Gaming Accessories",
+        "stock":15
+     },
+     {
+        "id":14,
+        "name":"Fitness Tracking Bracelet",
+        "description":"Stylish fitness bracelet with heart rate monitoring and activity tracking features.",
+        "price":49.99,
+        "category":"Health and Fitness",
+        "stock":50
+     },
+     {
+        "id":15,
+        "name":"Portable Solar Charger",
+        "description":"Compact solar charger for on-the-go power, suitable for charging devices outdoors.",
+        "price":38.99,
+        "category":"Electronics",
+        "stock":35
+     },
+     {
+        "id":29,
+        "name":"Ultra HD Action Camera",
+        "description":"Compact high-definition camera for capturing exciting moments during outdoor activities. Water-resistant and easy to carry.",
+        "price":151.99,
+        "category":"Electronics",
+        "stock":35
+     }
+  ]
+}

@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs')
 const port = 8080;
 
-// DEIXAR O ID DO MEU BANCO DINAMICO
+
 
 app.use(express.json());
 
@@ -29,14 +29,15 @@ app.get('/products/:id', (req, res) => {
     const jsonData = JSON.parse(data);
     const productData = jsonData.products
     const productId = productData.find(product => product.id === id);
+    productId ? res.json(productId) : res.status(404).end();
 
-    fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
-      if (err) {
-        return error(err, res);
-      }
-      productId ? res.json(productId) : res.status(404).end();
 
-    });
+    // fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
+    //   if (err) {
+    //     return error(err, res);
+    //   }
+
+    // });
 
   })
 })
@@ -114,8 +115,8 @@ app.put('/products/:id', (req, res) => {
 
     jsonData.products[productIndex] = {
       ...jsonData.products[productIndex],
-      preco,
-      estoque
+      price,
+      stock
     }
 
     fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
