@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs')
 const port = 8080;
 
-// DEIXAR O ID DO MEU BANCO DINAMICO
+
 
 app.use(express.json());
 
