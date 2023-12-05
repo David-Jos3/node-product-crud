@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
+import data from './data.js'
 const app = express();
-const fs = require('fs')
 const port = 8080;
 
 
@@ -18,115 +18,50 @@ function error(err, res) {
 }
 
 app.get('/products/:id', (req, res) => {
-
   const id = Number(req.params.id);
-
-  fs.readFile('db.json', 'utf-8', (err, data) => {
-    if (err) {
-      return error(err, res);
-    }
-
-    const jsonData = JSON.parse(data);
-    const productData = jsonData.products
-    const productId = productData.find(product => product.id === id);
-    productId ? res.json(productId) : res.status(404).end();
-
-
-    // fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
-    //   if (err) {
-    //     return error(err, res);
-    //   }
-
-    // });
-
-  })
+  const product = data.find(product => product.id === id);
+  product ? res.json(product) : res.status(404).end();
 })
 
 app.get('/products', (req, res) => {
-  fs.readFile('db.json', 'utf-8', (err, data) => {
-
-    if (err) {
-      return error(err, res);
-    }
-
-    const jsonData = JSON.parse(data);
-    res.json(jsonData)
-  })
+  res.json(data);
 })
 
 
 app.post('/products', (req, res) => {
-
   const body = req.body
+  data.push(body);
+  res.status(200).end();
 
-  fs.readFile('db.json', 'utf-8', (err, data) => {
-    if (err) {
-      return error(err, res);
-    }
-    const jsonData = JSON.parse(data)
-
-
-    jsonData.products.push(body)
-
-    fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
-      if (err) {
-        return error(err, res);
-      }
-
-      res.status(200).end();
-    });
-  });
 });
 
 
 app.delete('/products/:id', (req, res) => {
 
   const id = Number(req.params.id);
+  const index = data.findIndex(index => index.id === id)
+  const delItem = data.splice(index, 1)
 
-  fs.readFile('db.json', 'utf-8', (err, data) => {
-    if (err) {
-      return error(err, res);
-    }
+  res.json(delItem);
+  res.status(204).end()
 
-    const jsonData = JSON.parse(data)
-    jsonData.products = jsonData.products.filter(product => product.id !== id);
-
-    fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
-      if (err) {
-        return error(err, res);
-      }
-      res.status(204).end();
-    })
-  })
 })
 
 app.put('/products/:id', (req, res) => {
 
   const id = Number(req.params.id);
-  const { preco, estoque } = req.body;
+  const { price, stock, description } = req.body;
+  const productIndex = data.findIndex(product => product.id === id);
 
-  fs.readFile('db.json', 'utf-8', (err, data) => {
-    if (err) {
-      return error(err, res)
-    }
+  data[productIndex] = {
+    ...data[productIndex],
+    price,
+    stock,
+    description
+  }
 
-    const jsonData = JSON.parse(data)
-    const productIndex = jsonData.products.findIndex(product => product.id === id);
+  res.json(data)
 
-    jsonData.products[productIndex] = {
-      ...jsonData.products[productIndex],
-      price,
-      stock
-    }
-
-    fs.writeFile('db.json', JSON.stringify(jsonData), (err) => {
-      if (err) {
-        return error(err, res);
-      }
-      res.status(204).end();
-
-    })
-  })
 })
 
 
