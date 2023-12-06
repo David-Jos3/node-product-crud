@@ -3,19 +3,12 @@ import data from './data.js'
 const app = express();
 const port = 8080;
 
-
-
 app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('<h1>Pagina Home</h1>')
 
 })
-
-function error(err, res) {
-  console.error(err)
-  res.status(500).send('Erro ao Processar a solicitação');
-}
 
 app.get('/products/:id', (req, res) => {
   const id = Number(req.params.id);
@@ -30,8 +23,13 @@ app.get('/products', (req, res) => {
 
 app.post('/products', (req, res) => {
   const body = req.body
-  data.push(body);
-  res.status(200).end();
+  const index = data.findIndex(index => index.id === body.id);
+
+  if (index === -1) {
+    data.push(body);
+    res.status(200).end();
+    return
+  } return res.status(400).json({ error: 'ID duplicado' })
 
 });
 
